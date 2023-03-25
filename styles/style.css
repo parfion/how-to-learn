@@ -38,6 +38,8 @@
 }
 
 .header__title {
+  margin-top: 0;
+  margin-bottom: 0;
   max-width: 730px;
   width: 100%;
   margin-left: 64px;
@@ -66,7 +68,7 @@
 
 .header__main-illustration {
   position: absolute;
-  object-fit: contain;
+  object-fit: cover;
   bottom: 0;
   right: 0;
   width: 765px;
@@ -120,7 +122,7 @@
   padding-bottom: 30px;
 }
 
-p:last-child {
+.two-columns__paragraph:last-child {
   padding-bottom: 0;
 }
 
