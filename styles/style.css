@@ -1,4 +1,4 @@
-body {
+.body {
   display: block;
   margin: 0;
 }
@@ -16,6 +16,8 @@ body {
 }
 
 .header {
+  display: flex;
+  align-items: center;
   position: relative;
   height: 100vh;
   min-height: 600px;
@@ -23,30 +25,30 @@ body {
   background-color: #f2f2f2;
 }
 
+.logo {
+  width: 228px;
+  height: 32px;
+}
+
 .logo_place_header {
   position: absolute;
   top: 30px;
   left: 64px;
-  width: 228px;
-  height: 32px;
   z-index: 1;
 }
 
 .header__title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 630px;
-  margin: 0;
-  height: 100%;
+  max-width: 730px;
+  width: 100%;
   margin-left: 64px;
   font-size: 102px;
   font-weight: 600;
   line-height: 96px;
-  z-index: 3;
+  z-index: 2;
 }
 
 .header__subtitle {
+  margin: 0;
   position: absolute;
   width: 388px;
   left: 64px;
@@ -54,7 +56,7 @@ body {
   font-size: 18px;
   font-weight: normal;
   line-height: 25px;
-  z-index: 3;
+  z-index: 2;
 }
 
 .header__link {
@@ -64,22 +66,22 @@ body {
 
 .header__main-illustration {
   position: absolute;
+  object-fit: contain;
   bottom: 0;
   right: 0;
   width: 765px;
   height: 608px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .header__square-pic {
   position: absolute;
   height: 568px;
   width: 568px;
-  top: 0;
+  top: 64px;
   right: 0;
-  margin-top: 64px;
   background-color: #2f80ed;
-  z-index: 1;
+  z-index: 0;
 }
 
 .description {
@@ -98,7 +100,7 @@ body {
 .two-columns__brief {
   width: 175px;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   font-size: 18px;
   font-weight: normal;
   line-height: 1.2;
@@ -107,6 +109,7 @@ body {
 
 .two-columns__main-text {
   width: 80%;
+  min-width: 784px;
 }
 
 .two-columns__paragraph {
@@ -114,11 +117,11 @@ body {
   font-weight: normal;
   line-height: 34px;
   margin: 0;
+  padding-bottom: 30px;
 }
 
-.two-column__paragraph_second {
-  padding-top: 30px;
-  padding-bottom: 30px;
+p:last-child {
+  padding-bottom: 0;
 }
 
 .two-columns__span-accent {
@@ -146,46 +149,15 @@ body {
   margin: 0 auto;
   text-align: center;
   width: 60%;
-  font-size: 34px;
-  font-weight: normal;
-  line-height: 24px;
-}
-
-.table {
-  display: flex;
-  width: 1100px;
-  margin: auto;
-  margin-bottom: 100px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.table__cell {
-  margin-top: 60px;
-  width: 250px;
-  text-align: left;
-
-}
-
-.table__heading {
-  margin: 0;
   font-size: 24px;
-  font-weight: 600;
-  line-height: 1.15;
-}
-
-.table__text {
-  margin: 0;
-  font-size: 18px;
   font-weight: normal;
-  line-height: 1.2;
-  padding-top: 20px;
+  line-height: 34px;
 }
 
 .feynman {
   position: relative;
   background-color: #f2f2f2;
-  height: 890px;
+  min-height: 890px;
 }
 
 .feynman__title {
@@ -237,10 +209,42 @@ body {
   color: white;
   position: relative;
   overflow: hidden;
-  z-index: -2;
+}
+
+.table {
+  display: flex;
+  width: 1100px;
+  margin: auto;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.table__cell {
+  margin-top: 60px;
+  width: 250px;
+  text-align: left;
+
+}
+
+.table__heading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.table__text {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+  padding-top: 20px;
 }
 
 .section-title_theme_dark {
+  position: relative;
   margin: 0 auto;
   padding-top: 90px;
   text-align: center;
@@ -248,9 +252,11 @@ body {
   font-size: 60px;
   font-weight: 600;
   line-height: 1.15;
+  z-index: 1;
 }
 
 .section-subtitle_theme_dark {
+  position: relative;
   margin: 0 auto;
   padding-top: 20px;
   text-align: center;
@@ -258,15 +264,18 @@ body {
   font-size: 24px;
   font-weight: normal;
   line-height: 34px;
+  z-index: 1;
 }
 
-.table_dark_theme {
+.table_theme_dark {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 1100px;
   margin: 0 auto;
   padding-bottom: 90px;
+  z-index: 1;
 }
 
 .table__cell_theme_dark {
@@ -291,12 +300,13 @@ margin-top: 80px;
 }
 
 .kaufman__triangle {
+background-image: url('../images/kaufman-triangle.svg');
 position: absolute;
+background-size: cover;
 right: -210px;
 top: 0;
 width: 877px;
 height: 877px;
-z-index: -1;
 }
 
 .footer {
@@ -329,7 +339,11 @@ z-index: -1;
 }
 
 .footer__author {
+  margin-top: 18px;
   margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 25px;
 }
 
 .footer__column-heading {
@@ -340,9 +354,13 @@ z-index: -1;
 }
 
 .footer__column-links {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
   padding-top: 20px;
-  padding-bottom: 18px;
+  padding-bottom: 16px;
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 .footer__column-link {
