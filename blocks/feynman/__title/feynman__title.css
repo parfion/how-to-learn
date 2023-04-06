@@ -1,7 +1,7 @@
 .feynman__title {
     position: relative;
     margin: 0 auto;
-    width: 648px;
+    max-width: 648px;
     padding-top: 100px;
     text-align: center;
     font-size: 120px;
